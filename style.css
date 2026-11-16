@@ -1,0 +1,369 @@
+@font-face {
+    font-family: "Chocolate Classical Sans";
+    src: url("fonts/ChocolateClassicalSans-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+:root {
+    --background: #FAFAF8;
+    --surface: #FFFFFF;
+    --soft: #F0EAD6;
+    --blue-soft: #DCE5ED;
+    --accent: #000099;
+    --text: #34343A;
+    --muted: #777783;
+    --border: #E8E5DF;
+}
+
+body:has(#dark:checked) {
+    --background: #25252B;
+    --surface: #303039;
+    --soft: #41414B;
+    --blue-soft: #414B5B;
+    --accent: #B8B8FF;
+    --text: #F5F3F0;
+    --muted: #C0BEC4;
+    --border: #4C4B54;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 30px;
+}
+
+body {
+    margin: 0;
+    background: var(--background);
+    color: var(--text);
+    font-family: "Chocolate Classical Sans", sans-serif;
+    font-size: 18px;
+    line-height: 1.8;
+    transition: 0.3s;
+}
+
+h1, h2, h3 {
+    font-family: "Lobster", cursive;
+    color: var(--accent);
+    font-weight: 400;
+}
+
+h1 {
+    font-size: 58px;
+}
+
+h2 {
+    font-size: 38px;
+    margin-bottom: 25px;
+}
+
+p {
+    color: var(--text);
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+a:hover {
+    opacity: 0.7;
+}
+
+.theme-switch {
+    text-align: right;
+    padding: 18px 7%;
+}
+
+.theme-switch input {
+    position: absolute;
+    opacity: 0;
+}
+
+.theme-switch label {
+    display: inline-block;
+    padding: 6px 15px;
+    margin-left: 6px;
+    border-radius: 30px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--text);
+    cursor: pointer;
+    font-size: 14px;
+}
+
+#light:checked ~ label[for="light"],
+#dark:checked ~ label[for="dark"] {
+    background: var(--accent);
+    color: white;
+}
+
+.navbar {
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 15px 0;
+}
+
+.navbar-brand {
+    font-family: "Lobster", cursive;
+    font-size: 27px;
+    color: var(--accent);
+}
+
+.menu {
+    position: relative;
+}
+
+.menu summary {
+    cursor: pointer;
+    list-style: none;
+    color: var(--accent);
+}
+
+.menu ul {
+    position: absolute;
+    right: 0;
+    top: 35px;
+    z-index: 10;
+    width: 210px;
+    padding: 15px 20px;
+    margin: 0;
+    list-style: none;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    box-shadow: 0 8px 25px #00000012;
+}
+
+.menu li {
+    padding: 6px 0;
+}
+
+.personal {
+    display: flex;
+    align-items: center;
+    gap: 65px;
+    max-width: 1050px;
+    margin: 80px auto;
+    padding: 35px;
+}
+
+.personal-photo {
+    flex: 0 0 380px;
+    width: 380px;
+}
+
+.personal-photo img {
+    display: block;
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 21px;
+    box-shadow: 15px 15px 0 var(--soft);
+}
+
+.personal-info {
+    flex: 1;
+}
+
+.personal-info h1 {
+    margin-bottom: 18px;
+}
+
+.personal-info .subtitle {
+    color: var(--muted);
+    font-size: 20px;
+    margin-bottom: 25px;
+}
+
+.personal-info p {
+    max-width: 470px;
+}
+
+.button-primary {
+    color: #FFFFFF;
+    background: var(--accent);
+    border: none;
+    border-radius: 30px;
+    padding: 12px 27px;
+    margin-top: 15px;
+}
+
+.button-primary:hover {
+    background: var(--accent);
+    opacity: 0.8;
+}
+
+.content-section {
+    max-width: 1000px;
+    margin: 55px auto;
+    padding: 45px 50px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+}
+
+.content-section h2 {
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.content-section h2::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 65px;
+    height: 3px;
+    background: var(--soft);
+    border-radius: 5px;
+}
+
+.interest-card {
+    height: 100%;
+    padding: 25px;
+    background: var(--background);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    transition: transform 0.2s;
+}
+
+.interest-card:hover {
+    transform: translateY(-5px);
+}
+
+.interest-card h3 {
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+#github {
+    background: var(--blue-soft);
+}
+
+#github h2 {
+    color: var(--accent);
+}
+
+#contacts a {
+    border-bottom: 1px solid var(--soft);
+}
+
+.footer {
+    margin-top: 80px;
+    padding: 30px;
+    text-align: center;
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+}
+
+.footer p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 15px;
+}
+
+@media (max-width: 992px) {
+    .personal {
+        max-width: 90%;
+        gap: 35px;
+    }
+
+    .personal-photo {
+        flex: 0 0 300px;
+        width: 300px;
+    }
+
+    .personal-photo img {
+        height: 360px;
+    }
+
+    .persoal-info h1 {
+        font-size: 45px;
+    }
+
+    .content-section {
+        margin: 35px 20px;
+    }
+}
+
+@media (max-width: 650px) {
+    body {
+        font-size: 16px;
+    }
+
+    .theme-switch {
+        text-align: center;
+        padding: 12px;
+    }
+
+    .navbar .container {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .personal {
+        flex-direction: column;
+        text-align: center;
+        margin: 35px auto;
+        padding: 15px;
+        gap: 35px;
+    }
+
+    .personal-photo {
+        flex: none;
+        width: 240px;
+    }
+
+    .personal-photo img {
+        height: 290px;
+    }
+
+    .personal-info h1 {
+        font-size: 40px;
+    }
+
+    .personal-info p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .content-section {
+        padding: 30px 22px;
+        margin: 25px 12px;
+        border-radius: 18px;
+    }
+
+    .content-section h2 {
+        font-size: 32px;
+    }
+
+    .footer {
+        margin-top: 40px;
+    }
+}
+
+@media (max-width: 380px) {
+    .personal-photo {
+        width: 210px;
+    }
+
+    .personal-photo img {
+        height: 250px;
+    }
+
+    .personal-info h1 {
+        font-size: 34px;
+    }
+
+    .theme-switch label {
+        padding: 5px 9px;
+        font-size: 12px;
+    }
+}
